@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowState | Twoja produktywność</title>
+    <style>
+        /* Sekcja :root została usunięta */
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            /* Kolor tła wpisany bezpośrednio */
+            background: linear-gradient(135deg, #0f172a 0%, #1e1e3f 100%);
+            color: white;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 10%;
+            align-items: center;
+        }
+
+        .logo { 
+            font-weight: 800; 
+            font-size: 1.5rem; 
+            background: linear-gradient(to right, #6366f1, #a855f7); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 10%;
+            min-height: 80vh;
+        }
+
+        .hero-content { max-width: 500px; }
+
+        h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; }
+
+        .btn-download {
+            display: inline-block;
+            padding: 15px 35px;
+            /* Zastąpiono var(--primary) przez #6366f1 */
+            background: #6366f1;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-download:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.5); 
+        }
+
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
+            border: 12px solid #334155;
+            border-radius: 40px;
+            /* Zastąpiono var(--dark) przez #0f172a */
+            background: #0f172a;
+            position: relative;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+
+        .phone-screen {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .app-widget {
+            /* Zastąpiono var(--glass) przez rgba(255, 255, 255, 0.1) */
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 100px 10%;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.03);
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; }
+            .features { grid-template-columns: 1fr; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">FlowState</div>
+        <a href="#" class="btn-download" style="padding: 10px 20px; font-size: 0.8rem;">Pobierz teraz</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Zapanuj nad czasem.</h1>
+            <p style="color: #94a3b8; font-size: 1.2rem;">Najpiękniejsza aplikacja do zadań, która pomoże Ci osiągnąć stan Flow w codziennej pracy.</p>
+            <br>
+            <a href="#" class="btn-download">Zacznij za darmo</a>
+        </div>
+
+        <div class="phone-mockup">
+            <div class="phone-screen">
+                <div style="width: 40px; height: 4px; background: #334155; margin: 0 auto 20px; border-radius: 10px;"></div>
+                <div class="app-widget">
+                    <small>Dzisiaj</small>
+                    <div style="height: 10px; width: 80%; background: #6366f1; margin: 10px auto; border-radius: 5px;"></div>
+                </div>
+                <div class="app-widget" style="text-align: left;">
+                    <div style="font-size: 0.8rem;">✓ Projekt Portfolio</div>
+                    <div style="font-size: 0.8rem; opacity: 0.5;">✓ Trening</div>
+                </div>
+                <div style="background: #a855f7; height: 150px; width: 100%; border-radius: 20px; margin-top: 20px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>Tryb Focus</h3>
+            <p>Zablokuj rozpraszacze jednym kliknięciem.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Analityka</h3>
+            <p>Sprawdź, ile czasu poświęcasz na ważne zadania.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Synchronizacja</h3>
+            <p>Twoje dane są wszędzie tam, gdzie Ty.</p>
+        </div>
+    </section>
+
+</body>
+</html>

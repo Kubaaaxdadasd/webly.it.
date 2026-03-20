@@ -1,0 +1,486 @@
+/* ===================================================
+   1. USTAWIENIA OGÓLNE (BODY, CZCIONKI)
+   =================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ===================================================
+   2. PRZYCISK MENU MOBILNEGO (BURGER)
+   =================================================== */
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    z-index: 1001;
+}
+
+/* ===================================================
+   3. BANER / OBRAZY
+   =================================================== */
+img.baner {
+    width: 100%;      
+    max-width: 1200px; 
+    height: auto;     
+}
+
+/* ===================================================
+   4. MENU GÓRNE (NAWIGACJA GŁÓWNA)
+   =================================================== */
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px; 
+    background-color: #0056b3;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white; 
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #ffcc00;
+}
+
+/* ===================================================
+   5. SIDEBAR (PANEL BOCZNY)
+   =================================================== */
+#sidebar {
+    width: 250px;
+    background: #333;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    height: 100%;
+    padding-top: 60px;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
+    color: white;
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 15px 25px;
+    border-bottom: 1px solid #444;
+}
+
+.hidden {
+    transform: translateX(-100%);
+}
+
+#sidebar.active {
+    transform: translateX(0);
+}
+
+/* ===================================================
+   6. UKŁAD I KONTENERY (CONTAINER, HERO)
+   =================================================== */
+.container {
+    max-width: 1100px; /* To jest idealna szerokość dla czytelności */
+    margin: 0 auto;    /* Centruje wszystko na środku */
+    padding: 0 20px;   /* Margines bezpieczeństwa dla telefonów */
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: #f4f4f4;
+}
+
+.cta {
+    background: #0056b3;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* ===================================================
+   7. STARE SEKCJE PREZENTACYJNE (SZTAB / JAKUB)
+   =================================================== */
+.sztab {
+    background-color: #0056b3;
+    width: 100%;
+    height: 500px;
+    display: flex;           
+    justify-content: center; 
+    align-items: center;  
+}
+
+.jakub {
+    background-color: white;
+    width: 300px;
+    height: auto;           
+    min-height: 300px;     
+    text-align: center;
+    border: black solid 1px;
+    padding: 20px;         
+    border-radius: 15px;    
+}
+
+/* ===================================================
+   8. SEKCJA KONTAKTOWA I FORMULARZ
+   =================================================== */
+.kontakt {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 60px 0; 
+    display: flex;           
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;  
+    text-align: center;
+}
+
+.kontakt form {
+    width: 100%;
+    max-width: 400px;
+}
+
+.kontakt input, .kontakt textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box; 
+}
+
+#button {
+    background: #0056b3;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#button:hover {
+    background-color: #004494; 
+}
+
+/* ===================================================
+   9. SEKCJA "O MNIE" - KARTA DEWELOPERA
+   =================================================== */
+.about-me-section {
+    padding: 80px 20px;
+    background-color: #f8f9fa; /* Jasnoszare tło dla kontrastu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* KARTA DEWELOPERA */
+.developer-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 650px; /* Szersza, żeby pigułki miały miejsce */
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* NAGŁÓWKI I TEKST W KARCIE */
+.dev-name {
+    color: #0056b3;
+    font-size: 2.8rem;
+    margin-bottom: 5px;
+}
+
+.dev-role {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    margin-top: 0;
+}
+
+.dev-education {
+    font-size: 0.95rem;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 25px 0;
+}
+
+.dev-bio h3, .skills-section h3 {
+    font-size: 1.1rem;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.dev-bio p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* ===================================================
+   10. PIGUŁKI UMIEJĘTNOŚCI (SKILLS TAGS)
+   =================================================== */
+.skills-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Pozwala zawijać pigułki na telefonie */
+    gap: 12px;
+}
+
+.about-me-section {
+    background-color:#0056b3;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 50px;
+    background-color: #f0f7ff; /* Bardzo jasny niebieski */
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 86, 179, 0.1);
+}
+
+/* Kolory dla konkretnych tagów */
+.skill-tag.responsive {
+    background-color: #fff8e1; /* Ciepły żółty */
+    color: #ff9800;
+}
+
+/* ===================================================
+   11. RWD (STYL DLA TELEFONÓW I TABLETÓW)
+   =================================================== */
+
+@media (max-width: 768px) {
+    /* 1. NAWIGACJA */
+    .top-nav {
+        display: none !important; /* Ukrywamy napisy, by nie nachodziły na burgera */
+    }
+
+    header {
+        height: 60px;
+        background-color: #0056b3;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    body {
+        padding-top: 60px; /* Robimy miejsce pod przypięty header */
+    }
+
+    /* 2. SEKCJA HERO */
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Mniejszy napis na telefonie */
+    }
+
+    /* 3. KARTA "O MNIE" (Kluczowa poprawka) */
+    .about-me-section {
+        padding: 40px 10px;
+    }
+
+    .developer-card {
+        padding: 30px 15px !important; /* Zmniejszamy gigantyczny padding 50px */
+        width: 95% !important;
+        max-width: none;
+    }
+
+    .dev-name {
+        font-size: 2rem !important;
+    }
+
+    /* 4. FORMULARZ KONTAKTOWY */
+    .kontakt {
+        padding: 40px 15px;
+    }
+
+    .kontakt form {
+        width: 100%; /* Formularz na całą szerokość ekranu */
+    }
+
+    /* 5. STOPKA */
+    .footer-content {
+        flex-direction: column; /* Sekcje stopki jedna pod drugą */
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 10px;
+    }
+}
+
+/* Poprawka dla bardzo małych ekranów (np. iPhone SE) */
+@media (max-width: 480px) {
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+}
+
+/* ===================================================
+   12. ELEMENTY FORMULARZA (TEXTAREA, SELECT, LABEL)
+   =================================================== */
+#message {
+    width: 100%;
+    min-height: 200px; 
+    padding: 15px;
+    line-height: 1.5;   
+    resize: vertical;  
+    box-sizing: border-box;
+}
+
+#select {
+    width: 100%; 
+    padding: 12px 15px;
+    margin: 10px 0 20px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    appearance: none; 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray"><path d="M4 6l4 4 4-4"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#select:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.2);
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    display: block; 
+}
+
+/* ===================================================
+   13. UKŁAD FORMULARZA (CHECKBOX I PRZYCISK)
+   =================================================== */
+.kontakt form {
+    max-width: 600px; 
+    margin: 0 auto;
+    text-align: left; 
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.checkbox-row input {
+    width: 20px !important; 
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.checkbox-row label {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+#button {
+    display: block;
+    margin: 20px auto; 
+    padding: 12px 30px;
+}
+
+/* ===================================================
+   14. STOPKA (FOOTER)
+   =================================================== */
+.main-footer {
+    background-color: #0056b3; 
+    color: white;
+    padding: 40px 0 20px 0;
+    margin-top: 50px;
+    font-family: sans-serif;
+    clear: both; 
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #00aaff;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #00aaff;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 0.9em;
+}

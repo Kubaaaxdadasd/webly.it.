@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT projekt</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<header>
+  <button id="menu-btn" class="menu-toggle">☰</button>
+
+  <nav class="top-nav">
+    <ul class="menu">
+      <li><a href="o-nas.html">O nas</a></li>
+      <li><a href="projekt.html">Projekty</a></li>
+      <li><a href="uslugi.html">Usługi</a></li>
+      <li><a href="Opinie.html">Opinie klientów</a></li>
+    </ul>
+  </nav>
+</header>
+<nav id="sidebar" class="sidebar hidden">
+  <ul>
+    <li><a href="inne.html">Inne usługi</a></li>
+    <li><a href="oferty-ini.html">Oferty indywidualne</a></li>
+    <li><a href="dla_firm.html">Dla firm</a></li>
+    <li><a href="regulamin.html">Regulamim</a></li>
+  </ul>
+</nav>
+<main>
+    <section class="main">
+        <h1>Gotowe projekty stron WWW</h1>
+        <p class="subtitle">Wybierz gotowe rozwiązanie dla swojego biznesu. Oferuję pełną personalizację, wdrożenie na serwer oraz wsparcie techniczne.</p>
+        
+        <div class="projects-container">
+            <section class="project-card restauracja">
+                <h2>System dla Restauracji</h2>
+                <img src="restauracja.png" alt="Nowoczesna strona dla restauracji z menu online i systemem rezerwacji">
+                <p>Kompleksowe rozwiązanie dla gastronomii. Zawiera cyfrowe menu, moduł rezerwacji stolików oraz mapę dojazdu. Idealna dla lokali chcących zwiększyć liczbę zamówień online.</p>
+                <div class="actions">
+                    <a href="restauracja.html" class="link-preview">Podgląd na żywo</a>
+                  <button class="kup" onclick="kupProjekt('System dla Restauracji')">Kup dostęp</button>
+                </div>
+            </section>
+
+            <section class="project-card informacyjne">
+                <h2>Portal Informacyjny / Biblioteka</h2>
+                <img src="biblioteka.png" alt="Strona informacyjna dla instytucji publicznej lub biblioteki z katalogiem online">
+                <p>Przejrzysty układ treści zaprojektowany z myślą o łatwym dostępie do informacji. System posiada wyszukiwarkę, kategoryzację wpisów oraz sekcję aktualności i wydarzeń.</p>
+                <a href="biblioteka.html" class="link-preview">Podgląd na żywo</a>
+                <div class="actions">
+                    <button class="kup" onclick="kupProjekt('Portal Informacyjny / Biblioteka')">Kup dostęp</button>
+                </div>
+            </section>
+
+            <section class="project-card fryzjer">
+                <h2>Strona dla Fryzjera / Barbera</h2>
+                <img src="fryzjer.png" alt="Strona dla salonu fryzjerskiego z cennikiem i galerią prac">
+                <p>Elegancka i nowoczesna wizytówka dla salonu barberskiego lub fryzjerskiego. Zawiera przejrzysty cennik usług, galerię realizacji oraz sekcję szybkiego kontaktu.</p>
+                <div class="actions">
+                    <a href="fryzjer.html" class="link-preview">Podgląd na żywo</a>
+                    <button class="kup" onclick="kupProjekt('Strona dla Fryzjera / Barbera')">Kup dostęp</button>
+                </div>
+            </section>
+
+            <section class="project-card uslugi">
+                <h2>Landing Page Produktowy</h2>
+                <img src="page.png" alt="Landing page sprzedażowy typu One Page zoptymalizowany pod konwersję">
+                <p>Strona typu One-Page skoncentrowana na sprzedaży konkretnej usługi lub produktu. Zoptymalizowana pod kątem szybkości ładowania i konwersji (przycisk Call to Action).</p>
+                <div class="actions">
+                    <a href="Landing-Page.html" class="link-preview">Podgląd na żywo</a>
+                    <button class="kup" onclick="kupProjekt('Landing Page Produktowy')">Kup dostęp</button>
+                </div>
+            </section>
+        </div>
+    </section>
+</main>
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3> IT</h3>
+            <p>Tworzę nowoczesne strony, które <br>  pomagają Twojemu biznesowi rosnąć w siłę.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Nawigacja</h3>
+            <ul>
+                <li><a href="o-nas.html">O nas</a></li>
+                <li><a href="projekt.html">Projekty</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Kontakt</h3>
+            <p>📧 velocodeweb@gmail.com</p>
+            <p>📍 Warszawa, Polska</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Webly.it. Wszystkie prawa zastrzeżone.</p>  
+    </div>
+</footer>
+<script src="skrypt.js"></script>
+</body>
+</html>
