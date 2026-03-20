@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka Miejska | Antykwariat Myśli</title>
+    <style>
+        :root {
+            --primary: #2d5a27; /* Zielony biblioteczny */
+            --accent: #d4a373; /* Beżowy/papierowy */
+            --bg: #fefae0;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: -30px auto 40px;
+            padding: 0 20px;
+        }
+
+        /* Wyszukiwarka */
+        .search-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .btn-search {
+            background: var(--accent);
+            border: none;
+            padding: 0 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Główny układ */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        h3 { color: var(--primary); margin-top: 0; }
+
+        /* Godziny Otwarcia - Tabela */
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .hours-table td {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .day { font-weight: bold; }
+        .closed { color: #e63946; }
+
+        /* Newsy */
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .date-badge {
+            font-size: 0.8rem;
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 3px;
+        }
+
+        #searchResults {
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .search-box { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Antykwariat Myśli</h1>
+    <p>Twoje okno na świat literatury i nauki</p>
+</header>
+
+<div class="container">
+    <div class="search-box">
+        <input type="text" id="bookInput" placeholder="Wpisz tytuł książki lub autora (np. Lem, Sapkowski)...">
+        <button class="btn-search" onclick="searchBook()">Szukaj</button>
+    </div>
+    <div id="searchResults"></div>
+
+    <div class="main-grid">
+        <section class="card">
+            <h3>Aktualności i Wydarzenia</h3>
+            <div class="news-item">
+                <span class="date-badge">15.03.2026</span>
+                <h4>Noc z Kryminałem</h4>
+                <p>Zapraszamy na spotkanie autorskie z czołowymi polskimi autorami kryminałów. Start o 19:00.</p>
+            </div>
+            <div class="news-item">
+                <span class="date-badge">10.03.2026</span>
+                <h4>Nowa dostawa: Sci-Fi</h4>
+                <p>Półki ugięły się pod ciężarem nowości! Ponad 50 nowych tytułów z gatunku fantastyki naukowej.</p>
+            </div>
+            <div class="news-item">
+                <span class="date-badge">01.03.2026</span>
+                <h4>Kącik Malucha</h4>
+                <p>Otworzyliśmy nową strefę zabaw i czytania dla najmłodszych czytelników (0-5 lat).</p>
+            </div>
+        </section>
+
+        <aside class="card">
+            <h3>Godziny Otwarcia</h3>
+            <table class="hours-table">
+                <tr><td class="day">Poniedziałek</td><td>09:00 - 18:00</td></tr>
+                <tr><td class="day">Wtorek</td><td>09:00 - 18:00</td></tr>
+                <tr><td class="day">Środa</td><td>10:00 - 20:00</td></tr>
+                <tr><td class="day">Czwartek</td><td>09:00 - 18:00</td></tr>
+                <tr><td class="day">Piątek</td><td>09:00 - 18:00</td></tr>
+                <tr><td class="day">Sobota</td><td>10:00 - 14:00</td></tr>
+                <tr><td class="day">Niedziela</td><td class="closed">Zamknięte</td></tr>
+            </table>
+            <p style="font-size: 0.8rem; margin-top: 20px;">
+                * W święta państwowe biblioteka jest nieczynna.
+            </p>
+        </aside>
+    </div>
+</div>
+
+<script>
+    function searchBook() {
+        const input = document.getElementById('bookInput').value;
+        const results = document.getElementById('searchResults');
+        
+        if(input.length < 3) {
+            results.innerText = "Wpisz co najmniej 3 znaki...";
+            return;
+        }
+
+        results.innerText = "Przeszukiwanie bazy danych... Sprawdzanie dostępności pozycji: " + input;
+        
+        setTimeout(() => {
+            results.innerHTML = "<strong>Wynik:</strong> Znaleziono 2 dostępne egzemplarze pasujące do zapytania!";
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>

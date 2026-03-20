@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Szukasz profesjonalnych usług IT? Jakub oferuje konsultacje informatyczne, tworzenie stron oraz obsługę techniczną dla firm i osób indywidualnych.">
+  <title>Webly.it - Usługi Informatyczne</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="Webly.it-logo-transparent.png">
+  <style>
+.form {
+    background-color: #f8f9fa; /* Delikatne szare tło sekcji, żeby biały formularz się odcinał */
+    width: 100%;
+    padding: 80px 20px; 
+    display: flex;           
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;  
+    text-align: center;
+  }
+
+  .form form {
+    width: 100%;
+    max-width: 450px; /* Nieco szerszy, żeby tekst regulaminu miał oddech */
+    background-color: white; /* Białe tło formularza */
+    
+    /* MODERNE ZAOKRĄGLENIA I RAMKA */
+    border: 1px solid #e0e0e0; /* Delikatniejsza, szara ramka zamiast czarnej */
+    border-radius: 20px;       /* Mocne, nowoczesne zaokrąglenie rogów */
+    
+    /* CIEŃ (Daje efekt lewitacji) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    
+    padding: 40px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+  }
+
+  /* Efekt po najechaniu na cały formularz */
+  .form form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 86, 179, 0.15);
+    border-color: #0056b3; /* Ramka zmienia kolor na Twój niebieski */
+  }
+
+  /* Stylizacja pól wewnątrz (input, textarea) dla spójności */
+  .form form input, 
+  .form form textarea, 
+  .form form select {
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Zaokrąglone pola wpisywania */
+    padding: 12px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  .btn-submit {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%; /* Na szerokość formularza */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #004494;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+.checkbox-container {
+    display: flex;          /* Zmienia układ na elastyczny wiersz */
+    align-items: flex-start; /* To jest KLUCZ: checkbox zostaje na górze względem PIERWSZEJ linijki tekstu */
+    gap: 12px;               /* Odstęp poziomy między kwadracikiem a tekstem */
+    margin: 25px 0;         /* Odstęp pionowy całego bloku od reszty formularza */
+    text-align: left;       /* Wymusza wyrównanie tekstu do lewej */
+    
+    /* Dodatkowo, żeby całość była ładnie wyśrodkowana jako blok, ale tekst od lewej: */
+    width: 100%;
+    max-width: 400px; /* Dopasuj do szerokości textarea */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Stylizacja samego kwadracika checkbox */
+.checkbox-container input[type="checkbox"] {
+    width: 18px !important;  /* Stała szerokość kwadracika */
+    height: 18px !important; /* Stała wysokość kwadracika */
+    margin: 0;               /* Usuwa domyślne marginesy przeglądarki */
+    cursor: pointer;         /* Zmienia kursor na rączkę */
+    
+    /* Mały hack, żeby checkbox był idealnie wyśrodkowany z pierwszą linią tekstu */
+    margin-top: 2px; 
+}
+
+/* Stylizacja tekstu obok checkboxa (Labela) */
+.checkbox-container label {
+    font-size: 0.85rem;      /* Nieco mniejszy, elegancki tekst */
+    line-height: 1.5;         /* Lepszy odstęp między liniami dla czytelności przy zawijaniu */
+    color: #444;             /* Kolor tekstu */
+    cursor: pointer;         /* Kliknięcie w tekst też zaznacza checkbox */
+    font-weight: normal;     /* Resetuje pogrubienie, jeśli label jest pogrubiony w globalnych stylach */
+}
+
+/* Stylizacja linku 'Regulamin' */
+.checkbox-container a {
+    color: #0056b3;          /* Twój niebieski */
+    text-decoration: underline; /* Podkreślenie, żeby wiadomo było, że to link */
+    font-weight: bold;
+}
+  </style>
+</head>
+<body>
+
+<header>
+  <button id="menu-btn" class="menu-toggle">☰</button>
+
+  <nav class="top-nav">
+    <ul class="menu">
+      <li><a href="o-nas.html">O nas</a></li>
+      <li><a href="projekt.html">Projekty</a></li>
+      <li><a href="uslugi.html">Usługi</a></li>
+      <li><a href="Opinie.html">Opinie</a></li>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+</header>
+
+<nav id="sidebar" class="sidebar hidden">
+  <ul>
+    <li><a href="inne.html">Inne usługi</a></li>
+    <li><a href="oferty-ini.html">Oferty indywidualne</a></li>
+    <li><a href="dla_firm.html">Dla firm</a></li>
+    <li><a href="regulamin.html">Regulamim</a></li>
+  </ul>
+</nav>
+<main>
+<section class="form">
+<section class="form">
+    <form name="kontakt-business" method="POST" data-netlify="true">
+        <h2>Skontaktuj się ze mną</h2>
+        <p>Opisz swój projekt, a ja przygotuję dla Ciebie darmową wycenę.</p>
+
+        <div class="input-group">
+            <label for="imie">Twoje Imię</label>
+            <input type="text" id="imie" name="imie" placeholder="Wpisz swoje imię..." required>
+        </div>
+
+        <div class="input-group">
+            <label for="email">Adres E-mail</label>
+            <input type="email" id="email" name="email" placeholder="np. nazwa@firma.pl" required>
+        </div>
+
+        <div class="input-group">
+            <label for="numer">Numer telefonu (opcjonalnie)</label>
+            <input type="tel" id="numer" name="numer" placeholder="Np. 123 456 789">
+        </div>
+
+        <div class="input-group">
+            <label for="message">Opisz swoją wizję lub potrzeby</label>
+            <textarea id="message" name="wiadomosc" placeholder="Np. Chciałbym stronę dla mojej restauracji..." required></textarea>
+        </div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="reg" name="accept_reg" required>
+            <label for="reg">Akceptuję <a href="regulamin.html" target="_blank">Regulamin</a> i rozumiem, że Wykonawca nie odpowiada za mój hosting.</label>
+        </div>
+
+        <button type="submit" class="btn-submit">Poproś o darmową wycenę</button>
+    </form>
+</section>
+</section>
+</main>
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Webly.it</h3>
+            <p>Tworzę nowoczesne strony, które <br> pomagają Twojemu biznesowi rosnąć w siłę.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Nawigacja</h3>
+            <ul>
+                <li><a href="o-nas.html">O nas</a></li>
+                <li><a href="projekt.html">Projekty</a></li>
+                <li><a href="index.html#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Kontakt</h3>
+            <p>📧 velocodeweb@gmail.com</p>
+            <p>📍 Warszawa, Polska</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Webly.it. Wszystkie prawa zastrzeżone.</p>  
+    </div>
+</footer>
+
+<script src="skrypt.js"></script>
+</body>
+</html>

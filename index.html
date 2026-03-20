@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Szukasz profesjonalnych usług IT? Jakub oferuje konsultacje informatyczne, tworzenie stron oraz obsługę techniczną dla firm i osób indywidualnych.">
+  <title>Webly.it - Usługi Informatyczne</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="Webly.it-logo-transparent.png">
+</head>
+<body>
+
+<header>
+  <button id="menu-btn" class="menu-toggle">☰</button>
+  <nav class="top-nav">
+    <ul class="menu">
+      <li><a href="o-nas.html">O nas</a></li>
+      <li><a href="projekt.html">Projekty</a></li>
+      <li><a href="uslugi.html">Usługi</a></li>
+      <li><a href="Opinie.html">Opinie klientów</a></li>
+    </ul>
+  </nav>
+</header>
+
+<nav id="sidebar" class="sidebar hidden">
+  <ul>
+    <li><a href="inne.html">Inne usługi</a></li>
+    <li><a href="oferty-ini.html">Oferty indywidualne</a></li>
+    <li><a href="dla_firm.html">Dla firm</a></li>
+    <li><a href="regulamin.html">Regulamin</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero">
+    <h1>Tworzę strony internetowe, które przyciągają klientów</h1>
+    <p>Pomagam firmom zaistnieć w internecie dzięki nowoczesnym i szybkim stronom.</p>
+    <button class="cta" id="hero-btn">Skontaktuj się ze mną</button>
+  </section>
+
+  <section class="about-me-section">
+    <div class="developer-card">
+        <h1 class="dev-name">Jakub</h1>
+        <p class="dev-role">Ambitny programista WWW</p>
+        <p class="dev-education">Uczeń technikum – kierunek programista</p>
+        <div class="divider"></div>
+        <div class="dev-bio">
+            <h3>Dlaczego ja?</h3>
+            <p>Moja pasja to tworzenie stron, które działają i zarabiają. Połączenie wiedzy technicznej z młodzieńczą energią pozwala mi dostarczać nowoczesne rozwiązania, dopasowane do Twoich potrzeb.</p>
+        </div>
+        <div class="divider"></div>
+        <div class="skills-section">
+            <h3>W czym się specjalizuję:</h3>
+            <div class="skills-tags">
+                <span class="skill-tag html">HTML5</span>
+                <span class="skill-tag css">CSS3</span>
+                <span class="skill-tag js">JavaScript</span>
+                <span class="skill-tag php">PHP</span>
+                <span class="skill-tag sql">SQL</span>
+                <span class="skill-tag responsive">Responsive Design</span>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="kontakt" id="kontakt">
+    <h2>Zapytaj o darmową wycenę</h2><br>
+    
+    <form id="contactForm">
+      <label for="name">Imię</label><br>
+      <input type="text" id="name" name="imie" required><br>
+      
+      <label for="email">Email</label><br>
+      <input type="email" id="email" name="email" required><br>
+      
+      <label for="select">Wybierz co cię interesuje</label>
+      <select id="select" name="usluga">
+        <option value="strona-www">Strona WWW</option>
+        <option value="projekt-gotowy">Gotowy Projekt</option>
+      </select>
+
+      <label for="message">Wiadomość</label><br>
+      <textarea id="message" name="wiadomosc" required></textarea><br>
+
+      <div class="form-group">
+          <div class="checkbox-row">
+              <input type="checkbox" id="reg" name="zgoda_regulamin" required>
+              <label for="reg">Akceptuję <a href="regulamin.html" target="_blank">Regulamin</a> i rozumiem, że Wykonawca nie odpowiada za mój hosting.</label>
+          </div>
+          <button type="submit" id="button">Wyślij</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Webly.it</h3>
+            <p>Tworzę nowoczesne strony, które <br> pomagają Twojemu biznesowi rosnąć w siłę.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Nawigacja</h3>
+            <ul>
+                <li><a href="o-nas.html">O nas</a></li>
+                <li><a href="projekt.html">Projekty</a></li>
+                <li><a href="index.html#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Kontakt</h3>
+            <p>📧 velocodeweb@gmail.com</p>
+            <p>📍 Warszawa, Polska</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Webly.it. Wszystkie prawa zastrzeżone.</p>  
+    </div>
+</footer>
+
+<script src="skrypt.js"></script>
+</body>
+</html>

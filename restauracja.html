@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sól i Pieprz | Modern Bistro</title>
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #1a1a1a;
+            --light: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Sekcja Menu */
+        .menu-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #ccc;
+            padding: 10px 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        /* Formularz Rezerwacji */
+        .booking-section {
+            background: var(--dark);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label { margin-bottom: 5px; font-size: 0.9rem; }
+
+        input, select {
+            padding: 12px;
+            border-radius: 4px;
+            border: none;
+        }
+
+        .full-width { grid-column: span 2; }
+
+        button {
+            background: var(--gold);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        button:hover { background: #b08d48; }
+
+        .success-msg {
+            display: none;
+            background: #27ae60;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            form { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Sól i Pieprz</h1>
+    <p>Autentyczna kuchnia w nowoczesnym wydaniu</p>
+</header>
+
+<div class="container">
+    
+    <section class="menu-section">
+        <h2>Nasze Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <span>Tatar z buraka z kozim serem</span>
+                <span class="price">28 zł</span>
+            </div>
+            <div class="menu-item">
+                <span>Policzki wołowe w winie</span>
+                <span class="price">54 zł</span>
+            </div>
+            <div class="menu-item">
+                <span>Stek z polędwicy sezonowanej</span>
+                <span class="price">89 zł</span>
+            </div>
+            <div class="menu-item">
+                <span>Fondant czekoladowy</span>
+                <span class="price">24 zł</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <h2>Zarezerwuj Stolik</h2>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label>Imię i Nazwisko</label>
+                <input type="text" id="name" required placeholder="Jan Kowalski">
+            </div>
+            <div class="form-group">
+                <label>Liczba osób</label>
+                <select id="guests">
+                    <option value="1">1 osoba</option>
+                    <option value="2">2 osoby</option>
+                    <option value="4">4 osoby</option>
+                    <option value="more">Więcej (kontakt tel.)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Data</label>
+                <input type="date" id="date" required>
+            </div>
+            <div class="form-group">
+                <label>Godzina</label>
+                <input type="time" id="time" required>
+            </div>
+            <button type="submit" class="full-width">Potwierdź rezerwację</button>
+        </form>
+        <div id="msg" class="success-msg">Dziękujemy! Twoja rezerwacja została przyjęta.</div>
+    </section>
+
+</div>
+
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Prosta animacja "wysyłania"
+        const btn = this.querySelector('button');
+        btn.innerText = 'Przetwarzanie...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+            this.style.display = 'none';
+            document.getElementById('msg').style.display = 'block';
+        }, 1500);
+    });
+</script>
+
+</body>
+</html>
